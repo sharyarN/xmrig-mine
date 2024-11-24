@@ -8,7 +8,7 @@ jobs:
     executor:
       name: win/default
     steps:
-      # default shell is Powershell
+      - checkout
       - run:
          command: echo hello & echo world
          shell: cmd.exe
