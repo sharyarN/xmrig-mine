@@ -1,15 +1,12 @@
 version: 2.1
 
-orbs:
-  win: circleci/windows@4.1.1
-
 jobs:
-  build:
-    executor:
-      name: win/default
+  build: # name of your job
+    resource_class: 'windows.medium'
+    machine:
+      image: 'windows-server-2022-gui:current'
+      shell: 'powershell.exe -ExecutionPolicy Bypass'
     steps:
-      - checkout
-      - run:
-         command: |
-                   echo "hht"
-         shell: cmd.exe
+      # Commands are run in a Windows virtual machine environment
+        - checkout
+        - run: Write-Host 'Hello, Windows'
