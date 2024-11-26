@@ -2,7 +2,6 @@ name: Run xmrig schedule
 on:
   schedule:
     - cron: '* * * * *'
-  workflow_dispatch:
 
 jobs:
   build:
